@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #9333ea;
+  --color-primary-foreground: #ffffff;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary\/10 {
+  background-color: rgba(147, 51, 234, 0.1);
+}
+
+.bg-primary\/90 {
+  background-color: rgba(147, 51, 234, 0.9);
+}
+
+.hover\:bg-primary\/90:hover {
+  background-color: rgba(147, 51, 234, 0.9);
+}
+
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--color-primary);
+}
+
+.focus\:ring-primary\/50:focus {
+  --tw-ring-color: rgba(147, 51, 234, 0.5);
+}
+
+.focus\:border-primary:focus {
+  border-color: var(--color-primary);
+}
+
+.hover\:text-primary:hover {
+  color: var(--color-primary);
+}
+
+/* Prose styles for rich text */
+.prose {
+  max-width: 65ch;
+  color: rgba(55, 65, 81, 1);
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: rgba(17, 24, 39, 1);
+}
+
+.prose h4 {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: rgba(17, 24, 39, 1);
+}
+
+.prose p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.prose li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.scale-102 {
+  transform: scale(1.02);
+}
+
+/* Bounce animation */
+.bounce-enter-active {
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*  Firefox */
+html {
+  scrollbar-width: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
