@@ -9,7 +9,6 @@
         :src="item.images?.[0] || '/placeholder.png'"
         :alt="item.name.en"
         format="webp"
-        placeholder="./placeholder-card.jpg"
         sizes="50pxsm:300px md:400px lg:500px"
         class="transition-transform duration-700 hover:scale-110 w-full h-auto"
         @load="handleLoad"
