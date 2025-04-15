@@ -4,15 +4,23 @@
     @click="goToProductPage(item.id)"
     class="cursor-pointer flex flex-col justify-between h-full"
   >
-    <div class="overflow-hidden max-h-[414px]">
+    <div class="overflow-hidden max-h-[414px] relative">
       <NuxtImg
         :src="item.images?.[0] || '/placeholder.png'"
         :alt="item.name.en"
         format="webp"
         placeholder="./placeholder-card.jpg"
         sizes="50pxsm:300px md:400px lg:500px"
-        class="transition-transform duration-700 hover:scale-110"
+        class="transition-transform duration-700 hover:scale-110 w-full h-auto"
+        @load="handleLoad"
+        :class="{ 'opacity-0': !imgLoaded, 'opacity-100': imgLoaded }"
       />
+      <div
+        v-if="!imgLoaded"
+        class="absolute top-0 left-0 w-full h-full bg-gray-100 flex items-center justify-center"
+      >
+        <ImageLoader />
+      </div>
     </div>
     <div class="p-4">
       <h3 class="text-lg font-medium text-gray-900">
@@ -51,6 +59,10 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 const emit = defineEmits(["addToCart"]);
+const imgLoaded = ref(false);
+function handleLoad() {
+  imgLoaded.value = true;
+}
 
 const goToProductPage = (id: string) => {
   router.push(`/products/${id}`);
