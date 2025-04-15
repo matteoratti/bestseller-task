@@ -21,7 +21,7 @@
                   :src="selectedImage"
                   :alt="product?.name?.dk || 'Product Image'"
                   format="webp"
-                  placeholder
+                  placeholder="../placeholder-card.jpg"
                   sizes="50pxsm:300px md:400px lg:500px"
                   class="object-cover"
                   @load="isImageLoading = false"
@@ -70,7 +70,7 @@
                   :src="image"
                   :alt="`${product.name.dk} - View ${index + 1}`"
                   format="webp"
-                  placeholder
+                  placeholder="../placeholder-card.jpg"
                   sizes="50pxsm:300px md:400px lg:500px"
                   class="object-cover"
                 />
